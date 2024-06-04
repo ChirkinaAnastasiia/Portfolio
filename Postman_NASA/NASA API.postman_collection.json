@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "9dd82b11-ff20-4d35-ac0b-fdbe19f0ccb8",
+		"name": "NASA API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32904439"
+	},
+	"item": [
+		{
+			"name": "Querying by Earth date 'Curiosity'",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();  \r",
+							"\r",
+							"collectionVariables.set(\"photoId\", jsonData.photos[1].id); \r",
+							"console.log(jsonData.photos[1].id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/curiosity/photos?earth_date=2022-01-21&api_key={{api_key}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"curiosity",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "earth_date",
+							"value": "2022-01-21"
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Querying by Earth date 'Opportunity'",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/opportunity/photos?earth_date=2022-01-21&api_key={{api_key}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"opportunity",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "earth_date",
+							"value": "2022-01-21"
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Querying by Earth date 'Spirit'",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/spirit/photos?earth_date=2022-01-21&api_key={{api_key}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"spirit",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "earth_date",
+							"value": "2022-01-21"
+						},
+						{
+							"key": "api_key",
+							"value": "{{api_key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_key",
+			"value": "XCNSEqTJvPPdkPLJVeUN54s8vA6jDGZYOXZfdzZS",
+			"type": "string"
+		},
+		{
+			"key": "baseURL",
+			"value": "https://api.nasa.gov/mars-photos/api/v1/rovers",
+			"type": "string"
+		},
+		{
+			"key": "photoId",
+			"value": ""
+		}
+	]
+}
